@@ -25,7 +25,7 @@ CREATE TABLE afastamento (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     data_inicial TIMESTAMP NOT NULL,
     data_final TIMESTAMP NOT NULL,
-    descricao TEXT,
+    descricao VARCHAR(240),
     id_pessoa INT NOT NULL,
     FOREIGN KEY (id_pessoa) REFERENCES pessoa(id)
 );
@@ -66,7 +66,7 @@ CREATE TABLE reuniao_pessoa (
 CREATE TABLE projeto (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(250) NOT NULL,
-    descricao TEXT NOT NULL,
+    descricao VARCHAR(250) NOT NULL,
     data_inicial TIMESTAMP NOT NULL,
     data_fim TIMESTAMP NOT NULL
 );
@@ -84,7 +84,7 @@ CREATE TABLE curso (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     codigo VARCHAR(250) NOT NULL,
     nome VARCHAR(120) NOT NULL,
-    descricao TEXT NOT NULL
+    descricao VARCHAR(250) NOT NULL
 );
 CREATE TABLE grade (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -94,7 +94,7 @@ CREATE TABLE grade (
 CREATE TABLE disciplina (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(120) NOT NULL,
-    descricao TEXT NOT NULL
+    descricao VARCHAR(250) NOT NULL
 );
 CREATE TABLE grade_disciplina (
     id_disciplina INT NOT NULL,
