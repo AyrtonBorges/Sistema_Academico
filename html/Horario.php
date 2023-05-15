@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Projeto</title>
+        <title>Horario</title>
         <style>
             .button{
                 height: 300px;
@@ -39,6 +39,7 @@
                 <th>Data Final</th>
                 <th>Horario Inicial</th>
                 <th>Horario Final</th>
+                <th>Alterações</th>
             </tr>';
 
     while($linha = mysqli_fetch_array($consulta))
@@ -49,6 +50,12 @@
                 <td>'.$linha['data_fim'].'</td>
                 <td>'.$linha['horario_ini'].'</td>
                 <td>'.$linha['horario_fim'].'</td>
+                <td>
+                    <form action="updatehorario.php" method="POST">
+                        <input type="hidden" name="id" value='.$linha['id'].'>
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
                 </tr>';
     }
 

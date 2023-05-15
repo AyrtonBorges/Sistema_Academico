@@ -36,6 +36,7 @@
             <tr>
                 <th>ID projeto</th>
                 <th>ID horario</th>
+                <th>Alterações</th>
             </tr>';
 
     while($linha = mysqli_fetch_array($consulta))
@@ -43,6 +44,13 @@
         echo '<tr> 
                 <td>'.$linha['id_projeto'].'</td>
                 <td>'.$linha['id_horario'].'</td>
+                <td>
+                <form action="update.php" method="POST">
+                    <input type="hidden" name="id_primeiro" value='.$linha['id_projeto'].'>
+                    <input type="hidden" name="id_segundo" value='.$linha['id_horario'].'>
+                    <input type="submit" value="Update">
+                </form>
+                </td>
                 </tr>';
     }
 
